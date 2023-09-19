@@ -2,7 +2,7 @@
 
 An AWS CDK Python project for demo purposes.
 
-## Welcome to your CDK Python project!
+## Welcome to your CDK Python project
 
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`cdk_workshop_stack`)
 which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
@@ -17,40 +17,40 @@ manually once the init process completes.
 
 To manually create a virtualenv on MacOS and Linux:
 
-```
-$ python3 -m venv .venv
+```bash
+python3 -m venv .venv
 ```
 
 After the init process completes and the virtualenv is created, you can use the following
 step to activate your virtualenv.
 
-```
-$ source .venv/bin/activate
+```bash
+source .venv/bin/activate
 ```
 
 If you are a Windows platform, you would activate the virtualenv like this:
 
-```
-% .venv\Scripts\activate.bat
+```bat
+.venv\Scripts\activate.bat
 ```
 
 Once the virtualenv is activated, you can install the required dependencies.
 
-```
-$ pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
 ```
 
 At this point you can now synthesize the CloudFormation template for this code.
 
-```
-$ cdk synth
+```bash
+cdk synth
 ```
 
 You can now begin exploring the source code, contained in the hello directory.
 There is also a very trivial test included that can be run like this:
 
-```
-$ pytest
+```bash
+pytest
 ```
 
 To add additional dependencies, for example other CDK libraries, just add to
