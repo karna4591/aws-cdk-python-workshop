@@ -107,7 +107,7 @@ repos:
         args: [--py36-plus]
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.11.0
+    rev: v3.11.1
     hooks:
       - id: pyupgrade
         args: [--py37-plus]
@@ -138,4 +138,3 @@ repos:
     rev: 6.1.0
     hooks:
       - id: flake8
-        additional_dependencies: [flake8-typing-imports==1.7.0]
