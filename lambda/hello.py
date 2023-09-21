@@ -10,7 +10,7 @@ import json
 
 def handler(event, context):
     """
-    Return a REST API endpoint's HTTP status code and HTTP headers.
+    Returns a REST API endpoint's HTTP status code and HTTP headers.
 
     Parameters
     ----------
