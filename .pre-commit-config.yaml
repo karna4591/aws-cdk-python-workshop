@@ -72,9 +72,9 @@ repos:
       - id: check-vcs-permalinks
       # - id: check-xml
       - id: check-yaml
-      # - id: debug-statements
+      - id: debug-statements
       - id: destroyed-symlinks
-      # - id: detect-aws-credentials
+      - id: detect-aws-credentials
       - id: detect-private-key
       - id: double-quote-string-fixer
       - id: end-of-file-fixer
@@ -84,9 +84,10 @@ repos:
       #   args: [--remove]
       # - id: forbid-new-submodules
       - id: mixed-line-ending
-      # - id: name-tests-test
+      - id: name-tests-test
+        args: [--pytest-test-first]
       - id: no-commit-to-branch
-      # - id: pretty-format-json
+      - id: pretty-format-json
       #   args: [--autofix, --no-sort-keys]
       - id: requirements-txt-fixer
       # - id: sort-simple-yaml
