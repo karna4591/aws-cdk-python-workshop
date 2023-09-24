@@ -1,0 +1,41 @@
+name: Deploy CDK Stack
+
+on:
+  push:
+    branches:
+      - main  # Adjust as needed
+
+env:
+  AWS_REGION: "us-east-1"  # Change to your desired AWS region
+
+jobs:
+  DeployCDK:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials and Assume Role
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::958686716208:role/GitHubAction-AssumeRoleWithAction # Change to reflect your IAM role’s ARN
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14  # Adjust as needed
+
+      - name: Install AWS CDK CLI
+        run: npm install -g aws-cdk
+
+      - name: Navigate to CDK application folder
+        run: |
+          cd app.py  # Replace with the actual path to your CDK application folder
+
+      - name: Deploy CDK stack
+        run: |
+          # Deploy your specific CDK stack from 'stack.py' by specifying the stack name
+          cdk deploy CdkWorkshopStack --app "python3 app.py" --require-approval never
